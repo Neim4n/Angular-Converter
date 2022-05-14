@@ -1,0 +1,128 @@
+.header {
+  .header__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 75px;
+    padding: 0 0 0 20px;
+    background: #1976d2;
+    box-shadow: 0 0 20px 5px #1976d21f;
+    border-radius: 0 0 5px 5px;
+    font-size: 25px;
+    color: white;
+    overflow: hidden;
+
+    .header__logo {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 15px;
+
+      b {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: red;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+      }
+
+    }
+
+    .header__currencies {
+      height: 100%;
+      transform: translate(100%, 0);
+      transition: 0.3s ease-in-out all;
+
+      &.open {
+        transform: translate(0, 0);
+      }
+
+      .header__currencies-container {
+        background: white;
+        height: 100%;
+        padding: 0 20px;
+        border-radius: 20px 0 5px 20px;
+        font-weight: 400;
+
+        justify-self: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+
+        .currencies__item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 5px;
+          color: black;
+
+          &:nth-child(1) {
+            margin-right: 30px;
+          }
+
+          .item__image {
+            height: 30px;
+            width: auto;
+            margin-right: 10px;
+          }
+
+          .item__currency {
+            cursor: default;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767.98px) {
+  .header {
+    .header__container {
+      padding: 0 0 0 10px;
+
+      .header__currencies {
+        .header__currencies-container {
+          font-size: 15px;
+          padding: 0 0 0 10px;
+
+          .currencies__item {
+            &:nth-child(1) {
+              margin-right: 0px
+            }
+
+            .item__image {
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .header {
+    .header__container {
+      .header__logo {
+        font-size: 20px;
+
+        b {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

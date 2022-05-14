@@ -1,0 +1,61 @@
+<div class="converter">
+  <div class="converter__container">
+    <mat-progress-bar mode="indeterminate" class="convertor__loader"
+                      [ngStyle]="{'visibility':currencies.length ? 'hidden' : 'visible'}">
+    </mat-progress-bar>
+    <div class="converter__header">
+      CONVERTER
+    </div>
+    <form action="" class="converter__form">
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Currency</mat-label>
+          <mat-select #select1 class="item__select"
+                      [value]="this.getDefaultValue('USD')"
+                      (selectionChange)="calcAmount(input1,select1,input2,select2)">
+            <mat-option *ngFor="let currency of currencies"
+                        class="select__option"
+                        [value]="currency?.value">
+              <div class="currency-option">
+                <img src="{{currency?.icon}}" alt="">
+                <span>{{currency?.currencyCode}} - ({{currency?.currencyName}})</span>
+              </div>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Amount</mat-label>
+          <input matInput placeholder="100.00" #input1 (input)="calcAmount(input1,select1,input2,select2)">
+        </mat-form-field>
+
+      </div>
+
+      <button class="form__button" #button (click)="changeSelectValues(button,input1,select1,input2,select2)">
+        <fa-icon [icon]="faRightLeft"></fa-icon>
+        <!--<img src="assets/arrow-right-arrow-left-solid.svg" alt="">-->
+      </button>
+
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Currency</mat-label>
+          <mat-select #select2 class="item__select" [value]="this.getDefaultValue('UAH')"
+                      (selectionChange)="calcAmount(input1,select1,input2,select2)">
+            <mat-option *ngFor="let currency of currencies" class="select__option" [value]="currency?.value">
+              <div class="currency-option">
+                <img src="{{currency?.icon}}" alt="">
+                <span>{{currency?.currencyCode}} - ({{currency?.currencyName}})</span>
+              </div>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Amount</mat-label>
+          <input matInput placeholder="100.00" #input2 (input)="calcAmount(input2,select2,input1,select1)">
+        </mat-form-field>
+
+      </div>
+    </form>
+  </div>
+</div>

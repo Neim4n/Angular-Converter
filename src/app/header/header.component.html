@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__logo">
+      <b>A</b>Converter
+    </div>
+    <div class="header__currencies" [ngClass]="{'open': !!currencies.length}">
+      <div class="header__currencies-container">
+      <span *ngFor="let currency of currencies" class="currencies__item">
+        <img src="{{currency.icon}}" alt="" class="item__image">
+        <span class="item__currency">{{currency.currencyCode}} {{currency.rate.toFixed(2)}}</span>
+      </span>
+      </div>
+    </div>
+  </div>
+</header>

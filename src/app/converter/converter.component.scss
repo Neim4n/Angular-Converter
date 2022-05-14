@@ -1,0 +1,151 @@
+.mat-option {
+  height: 20px;
+
+  .currency-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+
+    img {
+      height: 20px;
+      width: auto;
+      margin-right: 10px;
+    }
+  }
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background: none;
+}
+
+::ng-deep .mat-form-field-infix {
+  width: 50px !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #1976d2 !important;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background: #1976d2;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before, ::ng-deep .mat-form-field-ripple {
+  background: #1976d2;
+}
+
+.converter {
+  flex: 1 1 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 150px auto 0;
+  max-width: 768px;
+  width: 100%;
+
+  .converter__container {
+    padding: 40px;
+    //border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 0 20px 5px #1976d21f;
+    position: relative;
+    overflow: hidden;
+
+    .mat-progress-bar {
+      position: absolute;
+      top: 0;
+    }
+
+    .converter__header {
+      font-size: 30px;
+      color: #1976d2;
+      margin-bottom: 50px;
+      font-weight: 600;
+    }
+
+    .converter__form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 100%;
+
+      .form__item {
+        flex: 1 1 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .mat-form-field {
+          width: 100%;
+          font-size: 20px;
+          background: none;
+        }
+
+        .item__select {
+
+        }
+
+        .item__input {
+
+        }
+      }
+
+      .form__button {
+        margin: 0 30px;
+        background: none;
+        transform: rotate(0deg);
+        transition: 0.15s ease-in-out all;
+        font-size: 20px;
+        color: #6f6f6f;
+
+        &:hover {
+          color: #1976d2;
+        }
+
+        &.rotated {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .converter {
+    .converter__container {
+      padding: 40px 20px;
+
+      .converter__form {
+        .form__button {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .converter {
+    .converter__container {
+      .converter__form {
+        .form__item {
+          .mat-form-field {
+            font-size: 15px;
+          }
+        }
+
+        .form__button {
+          margin: 0 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
